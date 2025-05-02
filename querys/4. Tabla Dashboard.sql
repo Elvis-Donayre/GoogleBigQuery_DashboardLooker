@@ -84,7 +84,6 @@ predictions AS (
             SELECT
                 sessions.fullVisitorId,
                 sessions.visitId,
-                IF(totals.transactions IS NULL, 0, 1) AS label,
                 IFNULL(device.operatingSystem, "") AS os,
                 device.isMobile AS is_mobile,
                 IFNULL(geoNetwork.country, "") AS country,
